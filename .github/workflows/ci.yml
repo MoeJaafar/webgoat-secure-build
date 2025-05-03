@@ -39,13 +39,13 @@ jobs:
         exit-code: 1
 
     - name: Upload Trivy Report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: trivy-report
         path: reports/trivy-report.json
 
     - name: Upload Dockle Report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: dockle-report
         path: reports/dockle-report.json
