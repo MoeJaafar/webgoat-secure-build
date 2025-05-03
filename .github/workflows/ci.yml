@@ -19,7 +19,7 @@ jobs:
 
     - name: Download hardened JAR from GitHub Release
       run: |
-        curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/tag/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
+        curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/download/webgoat-hardened.jar/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
 
     - name: Build Docker image
       run: |
