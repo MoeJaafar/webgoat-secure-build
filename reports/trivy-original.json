@@ -1,0 +1,1722 @@
+[
+  {
+    "Target": "webgoat/webgoat:latest (ubuntu 24.04)",
+    "Type": "ubuntu"
+  },
+  {
+    "Target": "home/webgoat/webgoat.jar",
+    "Type": "jar",
+    "Vulnerabilities": [
+      {
+        "VulnerabilityID": "CVE-2013-7285",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.6",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2013-7285",
+        "Title": "XStream: remote code execution due to insecure XML deserialization",
+        "Description": "Xstream API versions up to 1.4.6 and version 1.4.10, if the security framework has not been initialized, may allow a remote attacker to run arbitrary shell commands by manipulating the processed input stream when unmarshaling XML or any supported format. e.g. JSON.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-78"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+            "V2Score": 6.8
+          }
+        },
+        "References": [
+          "http://blog.diniscruz.com/2013/12/xstream-remote-code-execution-exploit.html",
+          "http://markmail.org/message/kfqoqdfj5fnup5co?q=list:org.codehaus.xstream.dev\u0026page=3",
+          "http://seclists.org/oss-sec/2014/q1/69",
+          "http://web.archive.org/web/20140204133306/http://blog.diniscruz.com/2013/12/xstream-remote-code-execution-exploit.html",
+          "http://xstream.codehaus.org/security.html",
+          "https://bugzilla.redhat.com/CVE-2013-7285",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7285",
+          "https://fisheye.codehaus.org/changelog/xstream?cs=2210",
+          "https://github.com/advisories/GHSA-f554-x222-wgf7",
+          "https://lists.apache.org/thread.html/6d3d34adcf3dfc48e36342aa1f18ce3c20bb8e4c458a97508d5bfed1@%3Cissues.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/dcf8599b80e43a6b60482607adb76c64672772dc2d9209ae2170f369@%3Cissues.activemq.apache.org%3E",
+          "https://nvd.nist.gov/vuln/detail/CVE-2013-7285",
+          "https://securityblog.redhat.com/2014/01/23/java-deserialization-flaws-part-2-xml-deserialization/",
+          "https://www.mail-archive.com/user@xstream.codehaus.org/msg00604.html",
+          "https://www.mail-archive.com/user@xstream.codehaus.org/msg00607.html",
+          "https://www.oracle.com/security-alerts/cpuoct2020.html",
+          "https://x-stream.github.io/CVE-2013-7285.html"
+        ],
+        "PublishedDate": "2019-05-15T17:29:00Z",
+        "LastModifiedDate": "2022-04-25T13:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-10173",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.11",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-10173",
+        "Title": "xstream: remote code execution due to insecure XML deserialization (regression of  CVE-2013-7285)",
+        "Description": "It was found that xstream API version 1.4.10 before 1.4.11 introduced a regression for a previous deserialization flaw. If the security framework has not been initialized, it may allow a remote attacker to run arbitrary shell commands when unmarshalling XML or any supported format. e.g. JSON. (regression of CVE-2013-7285)",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-94"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "V3Score": 7.3
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.11",
+          "https://access.redhat.com/errata/RHSA-2019:3892",
+          "https://access.redhat.com/errata/RHSA-2019:4352",
+          "https://access.redhat.com/errata/RHSA-2020:0445",
+          "https://access.redhat.com/errata/RHSA-2020:0727",
+          "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10173",
+          "https://github.com/advisories/GHSA-hf23-9pf7-388p",
+          "https://nvd.nist.gov/vuln/detail/CVE-2019-10173",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpuApr2021.html",
+          "https://www.oracle.com/security-alerts/cpuapr2020.html",
+          "https://www.oracle.com/security-alerts/cpujan2021.html",
+          "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "PublishedDate": "2019-07-23T13:15:00Z",
+        "LastModifiedDate": "2022-10-05T20:38:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21342",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21342",
+        "Title": "XStream: SSRF via crafted input stream",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability where the processed stream at unmarshalling time contains type information to recreate the formerly written objects. XStream creates therefore new instances based on these type information. An attacker can manipulate the processed input stream and replace or inject objects, that result in a server-side forgery request. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-918",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "V2Score": 5.8,
+            "V3Score": 9.1
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "V3Score": 7.4
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21342",
+          "https://github.com/advisories/GHSA-hvv8-336g-rx3m",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-hvv8-336g-rx3m",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21342",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21342.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:50:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21344",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21344",
+        "Title": "XStream: Unsafe deserizaliation of javax.sql.rowset.BaseRowSet",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "V3Score": 7.3
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21344",
+          "https://github.com/advisories/GHSA-59jw-jqf4-3wq3",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-59jw-jqf4-3wq3",
+          "https://linux.oracle.com/cve/CVE-2021-21344.html",
+          "https://linux.oracle.com/errata/ELSA-2021-1354.html",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21344",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21344.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:54:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21345",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21345",
+        "Title": "XStream: Unsafe deserizaliation of com.sun.corba.se.impl.activation.ServerTableEntry",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker who has sufficient rights to execute commands of the host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-78"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6.5,
+            "V3Score": 9.9
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21345",
+          "https://github.com/advisories/GHSA-hwpc-8xqv-jvj4",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-hwpc-8xqv-jvj4",
+          "https://linux.oracle.com/cve/CVE-2021-21345.html",
+          "https://linux.oracle.com/errata/ELSA-2021-1354.html",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21345",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpuApr2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21345.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-10-21T22:41:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21346",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21346",
+        "Title": "XStream: Unsafe deserizaliation of sun.swing.SwingLazyValue",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 8.1
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21346",
+          "https://github.com/advisories/GHSA-4hrm-m67v-5cxr",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-4hrm-m67v-5cxr",
+          "https://linux.oracle.com/cve/CVE-2021-21346.html",
+          "https://linux.oracle.com/errata/ELSA-2021-1354.html",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21346",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21346.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:56:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21347",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21347",
+        "Title": "XStream: Unsafe deserizaliation of com.sun.tools.javac.processing.JavacProcessingEnvironment NameProcessIterator",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 8.1
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21347",
+          "https://github.com/advisories/GHSA-qpfq-ph7r-qv6f",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-qpfq-ph7r-qv6f",
+          "https://linux.oracle.com/cve/CVE-2021-21347.html",
+          "https://linux.oracle.com/errata/ELSA-2021-1354.html",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21347",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21347.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:58:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21350",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21350",
+        "Title": "XStream: Unsafe deserizaliation of com.sun.org.apache.bcel.internal.util.ClassLoader",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to execute arbitrary code only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 8.1
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21350",
+          "https://github.com/advisories/GHSA-43gc-mjxg-gvrq",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-43gc-mjxg-gvrq",
+          "https://linux.oracle.com/cve/CVE-2021-21350.html",
+          "https://linux.oracle.com/errata/ELSA-2021-1354.html",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21350",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21350.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:59:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21351",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21351",
+        "Title": "XStream: allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "CRITICAL",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6.5,
+            "V3Score": 9.1
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21351",
+          "https://github.com/advisories/GHSA-hrcp-8f3q-4w2c",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-hrcp-8f3q-4w2c",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21351",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21351.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T15:00:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2016-3674",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.9",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-3674",
+        "Title": "XStream: enabled processing of external entities",
+        "Description": "Multiple XML external entity (XXE) vulnerabilities in the (1) Dom4JDriver, (2) DomDriver, (3) JDomDriver, (4) JDom2Driver, (5) SjsxpDriver, (6) StandardStaxDriver, and (7) WstxDriver drivers in XStream before 1.4.9 allow remote attackers to read arbitrary files via a crafted XML document.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-200"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "V2Score": 5,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "V2Score": 5,
+            "V3Score": 5.3
+          }
+        },
+        "References": [
+          "http://lists.fedoraproject.org/pipermail/package-announce/2016-April/183180.html",
+          "http://lists.fedoraproject.org/pipermail/package-announce/2016-April/183208.html",
+          "http://rhn.redhat.com/errata/RHSA-2016-2822.html",
+          "http://rhn.redhat.com/errata/RHSA-2016-2823.html",
+          "http://www.debian.org/security/2016/dsa-3575",
+          "http://www.openwall.com/lists/oss-security/2016/03/25/8",
+          "http://www.openwall.com/lists/oss-security/2016/03/28/1",
+          "http://www.securityfocus.com/bid/85381",
+          "http://www.securitytracker.com/id/1036419",
+          "http://x-stream.github.io/changes.html#1.4.9",
+          "https://github.com/advisories/GHSA-rgh3-987h-wpmw",
+          "https://github.com/x-stream/xstream/issues/25",
+          "https://nvd.nist.gov/vuln/detail/CVE-2016-3674",
+          "https://snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-30385"
+        ],
+        "PublishedDate": "2016-05-17T14:08:00Z",
+        "LastModifiedDate": "2018-03-26T18:47:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2017-7957",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.10",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-7957",
+        "Title": "XStream: DoS when unmarshalling void type",
+        "Description": "XStream through 1.4.9, when a certain denyTypes workaround is not used, mishandles attempts to create an instance of the primitive type 'void' during unmarshalling, leading to a remote application crash, as demonstrated by an xstream.fromXML(\"\u003cvoid/\u003e\") call.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-20"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 5,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 5.9
+          }
+        },
+        "References": [
+          "http://www.debian.org/security/2017/dsa-3841",
+          "http://www.securityfocus.com/bid/100687",
+          "http://www.securitytracker.com/id/1039499",
+          "http://x-stream.github.io/CVE-2017-7957.html",
+          "https://access.redhat.com/errata/RHSA-2017:1832",
+          "https://access.redhat.com/errata/RHSA-2017:2888",
+          "https://access.redhat.com/errata/RHSA-2017:2889",
+          "https://access.redhat.com/security/cve/cve-2017-7957",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7957",
+          "https://exchange.xforce.ibmcloud.com/vulnerabilities/125800",
+          "https://github.com/advisories/GHSA-7hwc-46rm-65jh",
+          "https://github.com/x-stream/xstream/commit/6e546ec366419158b1e393211be6d78ab9604ab",
+          "https://github.com/x-stream/xstream/commit/8542d02d9ac5d384c85f4b33d6c1888c53bd55d",
+          "https://github.com/x-stream/xstream/commit/b3570be",
+          "https://github.com/x-stream/xstream/commit/b3570be2f39234e61f99f9a20640756ea71b1b4",
+          "https://nvd.nist.gov/vuln/detail/CVE-2017-7957",
+          "https://security-tracker.debian.org/tracker/CVE-2017-7957",
+          "https://www-prd-trops.events.ibm.com/node/715749",
+          "https://x-stream.github.io/CVE-2017-7957.html"
+        ],
+        "PublishedDate": "2017-04-29T19:59:00Z",
+        "LastModifiedDate": "2019-03-26T17:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-26217",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.14-jdk7",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-26217",
+        "Title": "XStream: remote code execution due to insecure XML deserialization when relying on blocklists",
+        "Description": "XStream before version 1.4.14 is vulnerable to Remote Code Execution.The vulnerability may allow a remote attacker to run arbitrary shell commands only by manipulating the processed input stream. Only users who rely on blocklists are affected. Anyone using XStream's Security Framework allowlist is not affected. The linked advisory provides code workarounds for users who cannot upgrade. The issue is fixed in version 1.4.14.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-78"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 9.3,
+            "V3Score": 8.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 9
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26217",
+          "https://github.com/advisories/GHSA-mw36-7c6c-q4q2",
+          "https://github.com/x-stream/xstream/commit/0fec095d534126931c99fd38e9c6d41f5c685c1a",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-mw36-7c6c-q4q2",
+          "https://linux.oracle.com/cve/CVE-2020-26217.html",
+          "https://linux.oracle.com/errata/ELSA-2021-0162.html",
+          "https://lists.apache.org/thread.html/r2de526726e7f4db4a7cb91b7355070779f51a84fd985c6529c2f4e9e@%3Cissues.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r7c9fc255edc0b9cd9567093d131f6d33fde4c662aaf912460ef630e9@%3Ccommits.camel.apache.org%3E",
+          "https://lists.apache.org/thread.html/r826a006fda71cc96fc87b6eca4b5d195f19a292ad36cea501682c38c@%3Cissues.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/redde3609b89b2a4ff18b536a06ef9a77deb93d47fda8ed28086fa8c3@%3Cissues.activemq.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2020/12/msg00001.html",
+          "https://nvd.nist.gov/vuln/detail/CVE-2020-26217",
+          "https://security.netapp.com/advisory/ntap-20210409-0004/",
+          "https://ubuntu.com/security/notices/USN-4714-1",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2020/dsa-4811",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpuApr2021.html",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2020-26217.html"
+        ],
+        "PublishedDate": "2020-11-16T21:15:00Z",
+        "LastModifiedDate": "2022-10-28T17:40:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-26258",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.15",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-26258",
+        "Title": "XStream: Server-Side Forgery Request vulnerability can be activated when unmarshalling",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.15, a Server-Side Forgery Request vulnerability can be activated when unmarshalling. The vulnerability may allow a remote attacker to request data from internal resources that are not publicly available only by manipulating the processed input stream. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.15. The reported vulnerability does not exist if running Java 15 or higher. No user is affected who followed the recommendation to setup XStream's Security Framework with a whitelist! Anyone relying on XStream's default blacklist can immediately switch to a whilelist for the allowed types to avoid the vulnerability. Users of XStream 1.4.14 or below who still want to use XStream default blacklist can use a workaround described in more detailed in the referenced advisories.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-918"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "V2Score": 5,
+            "V3Score": 7.7
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "V3Score": 7.7
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26258",
+          "https://github.com/advisories/GHSA-4cch-wxpw-8p28",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-4cch-wxpw-8p28",
+          "https://lists.apache.org/thread.html/r97993e3d78e1f5389b7b172ba9f308440830ce5f051ee62714a0aa34@%3Ccommits.struts.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2020/12/msg00042.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2020-26258",
+          "https://security.netapp.com/advisory/ntap-20210409-0005/",
+          "https://ubuntu.com/security/notices/USN-4714-1",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-4828",
+          "https://x-stream.github.io/CVE-2020-26258.html"
+        ],
+        "PublishedDate": "2020-12-16T01:15:00Z",
+        "LastModifiedDate": "2021-11-30T18:27:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21341",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21341",
+        "Title": "XStream: allow a remote attacker to cause DoS only by manipulating the processed input stream",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is vulnerability which may allow a remote attacker to allocate 100% CPU time on the target system depending on CPU type or parallel execution of such a payload resulting in a denial of service only by manipulating the processed input stream. No user is affected who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-400",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 7.1,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 5.9
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21341",
+          "https://github.com/advisories/GHSA-2p3x-qw9c-25hh",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-2p3x-qw9c-25hh",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21341",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21341.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-07-27T14:20:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21343",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21343",
+        "Title": "XStream: arbitrary file deletion on the local host via crafted input stream",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability where the processed stream at unmarshalling time contains type information to recreate the formerly written objects. XStream creates therefore new instances based on these type information. An attacker can manipulate the processed input stream and replace or inject objects, that result in the deletion of a file on the local host. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-73"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "V2Score": 5,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "V3Score": 5.9
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21343",
+          "https://github.com/advisories/GHSA-74cv-f58x-f9wf",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-74cv-f58x-f9wf",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21343",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21343.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:50:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21348",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21348",
+        "Title": "XStream: ReDoS vulnerability",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to occupy a thread that consumes maximum CPU time and will never return. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-400"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 7.8,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 5.9
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21348",
+          "https://github.com/advisories/GHSA-56p8-3fh9-4cvq",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-56p8-3fh9-4cvq",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21348",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21348.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-10-21T22:42:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-21349",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.16",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-21349",
+        "Title": "XStream: SSRF can be activated unmarshalling with XStream to access data streams from an arbitrary URL referencing a resource in an intranet or the local host",
+        "Description": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to request data from internal resources that are not publicly available only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-918",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+            "V2Score": 5,
+            "V3Score": 8.6
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "V3Score": 5.9
+          }
+        },
+        "References": [
+          "http://x-stream.github.io/changes.html#1.4.16",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21349",
+          "https://github.com/advisories/GHSA-f6hm-88x3-mfjv",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-f6hm-88x3-mfjv",
+          "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+          "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-21349",
+          "https://security.netapp.com/advisory/ntap-20210430-0002/",
+          "https://ubuntu.com/security/notices/USN-4943-1",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com//security-alerts/cpujul2021.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-21349.html",
+          "https://x-stream.github.io/security.html#workaround"
+        ],
+        "PublishedDate": "2021-03-23T00:15:00Z",
+        "LastModifiedDate": "2022-02-16T14:59:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-29505",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.17",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-29505",
+        "Title": "XStream: remote command execution attack by manipulating the processed input stream",
+        "Description": "XStream is software for serializing Java objects to XML and back again. A vulnerability in XStream versions prior to 1.4.17 may allow a remote attacker has sufficient rights to execute commands of the host only by manipulating the processed input stream. No user who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types is affected. The vulnerability is patched in version 1.4.17.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-94",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 6.5,
+            "V3Score": 8.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29505",
+          "https://github.com/advisories/GHSA-7chv-rrw6-w6fc",
+          "https://github.com/x-stream/xstream/commit/24fac82191292c6ae25f94508d28b9823f83624f",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-7chv-rrw6-w6fc",
+          "https://linux.oracle.com/cve/CVE-2021-29505.html",
+          "https://linux.oracle.com/errata/ELSA-2021-2683.html",
+          "https://lists.apache.org/thread.html/r8ee51debf7fd184b6a6b020dc31df25118b0aa612885f12fbe77f04f@%3Cdev.jmeter.apache.org%3E",
+          "https://lists.debian.org/debian-lts-announce/2021/07/msg00004.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-29505",
+          "https://security.netapp.com/advisory/ntap-20210708-0007/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://www.oracle.com/security-alerts/cpuoct2021.html",
+          "https://x-stream.github.io/CVE-2021-29505.html"
+        ],
+        "PublishedDate": "2021-05-28T21:15:00Z",
+        "LastModifiedDate": "2022-07-25T18:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39139",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39139",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of Xalan xsltc.trax.TemplatesImpl",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. A user is only affected if using the version out of the box with JDK 1.7u21 or below. However, this scenario can be adjusted easily to an external Xalan that works regardless of the version of the Java runtime. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 6.5,
+            "V3Score": 8.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39139",
+          "https://github.com/advisories/GHSA-64xx-cq4q-mf44",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-64xx-cq4q-mf44",
+          "https://linux.oracle.com/cve/CVE-2021-39139.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39139",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39139.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T02:37:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39141",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39141",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.xml.internal.ws.client.sei.*",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39141",
+          "https://github.com/advisories/GHSA-g5w6-mrj7-75h2",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-g5w6-mrj7-75h2",
+          "https://linux.oracle.com/cve/CVE-2021-39141.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39141",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39141.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T02:35:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39144",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39144",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of sun.tracing.*",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker has sufficient rights to execute commands of the host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-94",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "http://packetstormsecurity.com/files/169859/VMware-NSX-Manager-XStream-Unauthenticated-Remote-Code-Execution.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39144",
+          "https://github.com/advisories/GHSA-j9h8-phrw-h4fh",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-j9h8-phrw-h4fh",
+          "https://linux.oracle.com/cve/CVE-2021-39144.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39144",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39144.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2023-01-20T14:19:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39145",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39145",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapBindingEnumeration",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39145",
+          "https://github.com/advisories/GHSA-8jrj-525p-826v",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-8jrj-525p-826v",
+          "https://linux.oracle.com/cve/CVE-2021-39145.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39145",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39145.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T02:42:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39146",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39146",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of javax.swing.UIDefaults$ProxyLazyValue",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39146",
+          "https://github.com/advisories/GHSA-p8pq-r894-fm8f",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-p8pq-r894-fm8f",
+          "https://linux.oracle.com/cve/CVE-2021-39146.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39146",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39146.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T11:54:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39147",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39147",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapSearchEnumeration",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39147",
+          "https://github.com/advisories/GHSA-h7v4-7xg3-hxcc",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-h7v4-7xg3-hxcc",
+          "https://linux.oracle.com/cve/CVE-2021-39147.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39147",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39147.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:02:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39148",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39148",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.toolkit.dir.ContextEnumerator",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39148",
+          "https://github.com/advisories/GHSA-qrx8-8545-4wg2",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-qrx8-8545-4wg2",
+          "https://linux.oracle.com/cve/CVE-2021-39148.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39148",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39148.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:03:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39149",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39149",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.corba.*",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39149",
+          "https://github.com/advisories/GHSA-3ccq-5vw3-2p6x",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-3ccq-5vw3-2p6x",
+          "https://linux.oracle.com/cve/CVE-2021-39149.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39149",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39149.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:11:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39150",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39150",
+        "Title": "xstream: Server-side request forgery (SSRF) via unsafe deserialization of com.sun.xml.internal.ws.client.sei.*",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to request data from internal resources that are not publicly available only by manipulating the processed input stream with a Java runtime version 14 to 8. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the [Security Framework](https://x-stream.github.io/security.html#framework), you will have to use at least version 1.4.18.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-918",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39150",
+          "https://github.com/advisories/GHSA-cxfm-5m4g-x7xp",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-cxfm-5m4g-x7xp",
+          "https://linux.oracle.com/cve/CVE-2021-39150.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39150",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39150.html"
+        ],
+        "PublishedDate": "2021-08-23T19:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:12:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39151",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39151",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of com.sun.jndi.ldap.LdapBindingEnumeration",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39151",
+          "https://github.com/advisories/GHSA-hph2-m3g5-xxv4",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-hph2-m3g5-xxv4",
+          "https://linux.oracle.com/cve/CVE-2021-39151.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39151",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39151.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:20:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39152",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39152",
+        "Title": "xstream: Server-side request forgery (SSRF) via unsafe deserialization of jdk.nashorn.internal.runtime.Source$URLData",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to request data from internal resources that are not publicly available only by manipulating the processed input stream with a Java runtime version 14 to 8. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the [Security Framework](https://x-stream.github.io/security.html#framework), you will have to use at least version 1.4.18.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-918",
+          "CWE-502"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39152",
+          "https://github.com/advisories/GHSA-xw4p-crpj-vjx2",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-xw4p-crpj-vjx2",
+          "https://linux.oracle.com/cve/CVE-2021-39152.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39152",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39152.html"
+        ],
+        "PublishedDate": "2021-08-23T19:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:22:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39153",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39153",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of Xalan xsltc.trax.TemplatesImpl",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream, if using the version out of the box with Java runtime version 14 to 8 or with JavaFX installed. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39153",
+          "https://github.com/advisories/GHSA-2q8x-2p7f-574v",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-2q8x-2p7f-574v",
+          "https://linux.oracle.com/cve/CVE-2021-39153.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39153",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39153.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:23:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-39154",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.18",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-39154",
+        "Title": "xstream: Arbitrary code execution via unsafe deserialization of javax.swing.UIDefaults$ProxyLazyValue",
+        "Description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-434"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V2Score": 6,
+            "V3Score": 8.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "V3Score": 8.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39154",
+          "https://github.com/advisories/GHSA-6w62-hx7r-mw68",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-6w62-hx7r-mw68",
+          "https://linux.oracle.com/cve/CVE-2021-39154.html",
+          "https://linux.oracle.com/errata/ELSA-2021-3956.html",
+          "https://lists.debian.org/debian-lts-announce/2021/09/msg00017.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/22KVR6B5IZP3BGQ3HPWIO2FWWCKT3DHP/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVPHZA7VW2RRSDCOIPP2W6O5ND254TU7/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QGXIU3YDPG6OGTDHMBLAFN7BPBERXREB/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-39154",
+          "https://security.netapp.com/advisory/ntap-20210923-0003/",
+          "https://www.debian.org/security/2021/dsa-5004",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujan2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-39154.html"
+        ],
+        "PublishedDate": "2021-08-23T18:15:00Z",
+        "LastModifiedDate": "2022-10-05T12:24:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2021-43859",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.19",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-43859",
+        "Title": "xstream: Injecting highly recursive collections or maps can cause a DoS",
+        "Description": "XStream is an open source java library to serialize objects to XML and back again. Versions prior to 1.4.19 may allow a remote attacker to allocate 100% CPU time on the target system depending on CPU type or parallel execution of such a payload resulting in a denial of service only by manipulating the processed input stream. XStream 1.4.19 monitors and accumulates the time it takes to add elements to collections and throws an exception if a set threshold is exceeded. Users are advised to upgrade as soon as possible. Users unable to upgrade may set the NO_REFERENCE mode to prevent recursion. See GHSA-rmr5-cpv2-vgjf for further details on a workaround if an upgrade is not possible.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-400"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 5,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "http://www.openwall.com/lists/oss-security/2022/02/09/1",
+          "https://github.com/advisories/GHSA-rmr5-cpv2-vgjf",
+          "https://github.com/x-stream/xstream/commit/e8e88621ba1c85ac3b8620337dd672e0c0c3a846",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-rmr5-cpv2-vgjf",
+          "https://lists.debian.org/debian-lts-announce/2022/02/msg00018.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VACQYG356OHUTD5WQGAQ4L2TTFTAV3SJ/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XODFRE2ZL64FICBJDOPWOLPTSSAI4U7X/",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-43859",
+          "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "https://www.oracle.com/security-alerts/cpujul2022.html",
+          "https://x-stream.github.io/CVE-2021-43859.html"
+        ],
+        "PublishedDate": "2022-02-01T12:15:00Z",
+        "LastModifiedDate": "2022-08-09T00:40:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2022-40151",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.20",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-40151",
+        "Title": "xstream: Xstream to serialise XML data was vulnerable to Denial of Service attacks",
+        "Description": "Those using Xstream to seralize XML data may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow. This effect may support a denial of service attack.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-787"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47367",
+          "https://github.com/advisories/GHSA-f8cc-g7j8-xxpm",
+          "https://github.com/x-stream/xstream/issues/304",
+          "https://github.com/x-stream/xstream/issues/314",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-f8cc-g7j8-xxpm",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-40151",
+          "https://x-stream.github.io/CVE-2022-40151.html"
+        ],
+        "PublishedDate": "2022-09-16T10:15:00Z",
+        "LastModifiedDate": "2022-09-20T18:11:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2022-41966",
+        "PkgName": "com.thoughtworks.xstream:xstream",
+        "InstalledVersion": "1.4.5",
+        "FixedVersion": "1.4.20",
+        "Layer": {
+          "DiffID": "sha256:1a892a854c70946b878b2ec0de7fc21dbbda4f059cedfe916b736e8bb17b7fe6"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-41966",
+        "Title": "XStream can cause Denial of Service via stack overflow",
+        "Description": "XStream serializes Java objects to XML and back again. Versions prior to 1.4.20 may allow a remote attacker to terminate the application with a stack overflow error, resulting in a denial of service only via manipulation the processed input stream. The attack uses the hash code implementation for collections and maps to force recursive hash calculation causing a stack overflow. This issue is patched in version 1.4.20 which handles the stack overflow and raises an InputManipulationException instead. A potential workaround for users who only use HashMap or HashSet and whose XML refers these only as default map or set, is to change the default implementation of java.util.Map and java.util per the code example in the referenced advisory. However, this implies that your application does not care about the implementation of the map and all elements are comparable.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-502",
+          "CWE-120",
+          "CWE-121"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://github.com/advisories/GHSA-j563-grx4-pjpv",
+          "https://github.com/x-stream/xstream/security/advisories/GHSA-j563-grx4-pjpv",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-41966",
+          "https://x-stream.github.io/CVE-2022-41966.html"
+        ],
+        "PublishedDate": "2022-12-28T00:15:00Z",
+        "LastModifiedDate": "2023-01-06T17:05:00Z"
+      }
+    ]
+  }
+]

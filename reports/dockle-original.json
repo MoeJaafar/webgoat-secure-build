@@ -1,11 +1,11 @@
 {
-  "image": "webgoat/webgoat",
+  "image": "webgoat/webgoat:latest",
   "summary": {
     "fatal": 0,
     "warn": 1,
-    "info": 2,
+    "info": 1,
     "skip": 0,
-    "pass": 13
+    "pass": 14
   },
   "details": [
     {
@@ -17,30 +17,22 @@
       ]
     },
     {
-      "code": "CIS-DI-0005",
-      "title": "Enable Content trust for Docker",
-      "level": "INFO",
-      "alerts": [
-        "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
-      ]
-    },
-    {
       "code": "CIS-DI-0008",
       "title": "Confirm safety of setuid/setgid files",
       "level": "INFO",
       "alerts": [
         "setgid file: grwxr-xr-x usr/bin/expiry",
+        "setgid file: grwxr-xr-x usr/sbin/pam_extrausers_chkpwd",
         "setuid file: urwxr-xr-x usr/bin/passwd",
-        "setuid file: urwxr-xr-x usr/bin/gpasswd",
-        "setgid file: grwxr-xr-x usr/sbin/unix_chkpwd",
-        "setuid file: urwxr-xr-x usr/bin/umount",
-        "setuid file: urwxr-xr-x usr/bin/chsh",
-        "setuid file: urwxr-xr-x usr/bin/newgrp",
         "setgid file: grwxr-xr-x usr/bin/chage",
         "setuid file: urwxr-xr-x usr/bin/chfn",
+        "setuid file: urwxr-xr-x usr/bin/umount",
+        "setuid file: urwxr-xr-x usr/bin/chsh",
         "setuid file: urwxr-xr-x usr/bin/mount",
-        "setuid file: urwxr-xr-x usr/bin/su",
-        "setgid file: grwxr-xr-x usr/sbin/pam_extrausers_chkpwd"
+        "setuid file: urwxr-xr-x usr/bin/gpasswd",
+        "setgid file: grwxr-xr-x usr/sbin/unix_chkpwd",
+        "setuid file: urwxr-xr-x usr/bin/newgrp",
+        "setuid file: urwxr-xr-x usr/bin/su"
       ]
     }
   ]
