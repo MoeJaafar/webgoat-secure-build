@@ -6,7 +6,15 @@ RUN adduser -D -h /home/webgoat webgoat && \
     chown -R webgoat:webgoat /webgoat-data
 
 # Copy JAR file
-COPY webgoat-hardened.jar /webgoat/webgoat.jar
+# Copy JAR and entrypoint
+COPY hardened/webgoat-hardened.jar /webgoat/webgoat.jar
+COPY entrypoint.sh /entrypoint.sh
+
+# Make entrypoint executable
+RUN chmod +x /entrypoint.sh
+
+# Set ENTRYPOINT without exposing flags in Dockerfile
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Set working directory to writable one
 WORKDIR /webgoat-data
@@ -20,5 +28,5 @@ EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
   CMD wget -q --spider http://localhost:8080/WebGoat || exit 1
 
-# Disable schema script output + bind to 0.0.0.0
-ENTRYPOINT ["java", "-Dserver.address=0.0.0.0", "-Dhibernate.hbm2ddl.auto=none", "-jar", "/webgoat/webgoat.jar"]
+
+

@@ -23,7 +23,10 @@ jobs:
         curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/download/webgoat-hardened.jar/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
     
     - name: Build hardened image
-      run: docker build -t webgoat-patched:secure -f Dockerfile.patched .
+    
+      run: |
+        export DOCKER_CONTENT_TRUST=1
+        docker build -t webgoat-patched:secure -f Dockerfile.patched .
       working-directory: hardened
       
     - name: Run Trivy scan
