@@ -1,0 +1,164 @@
++----------------------------------+------------------+----------+-------------------+---------------+-----------------------------------------------------------+
+|             LIBRARY              | VULNERABILITY ID | SEVERITY | INSTALLED VERSION | FIXED VERSION |                           TITLE                           |
++----------------------------------+------------------+----------+-------------------+---------------+-----------------------------------------------------------+
+| com.thoughtworks.xstream:xstream | CVE-2013-7285    | CRITICAL | 1.4.5             | 1.4.6         | XStream: remote code execution due                        |
+|                                  |                  |          |                   |               | to insecure XML deserialization                           |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2013-7285                      |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2019-10173   |          |                   | 1.4.11        | xstream: remote code                                      |
+|                                  |                  |          |                   |               | execution due to insecure XML                             |
+|                                  |                  |          |                   |               | deserialization (regression of ...                        |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2019-10173                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2021-21342   |          |                   | 1.4.16        | XStream: SSRF via                                         |
+|                                  |                  |          |                   |               | crafted input stream                                      |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21342                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21344   |          |                   |               | XStream: Unsafe deserizaliation                           |
+|                                  |                  |          |                   |               | of javax.sql.rowset.BaseRowSet                            |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21344                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21345   |          |                   |               | XStream: Unsafe deserizaliation of                        |
+|                                  |                  |          |                   |               | com.sun.corba.se.impl.activation.ServerTableEntry         |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21345                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21346   |          |                   |               | XStream: Unsafe deserizaliation                           |
+|                                  |                  |          |                   |               | of sun.swing.SwingLazyValue                               |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21346                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21347   |          |                   |               | XStream: Unsafe deserizaliation of                        |
+|                                  |                  |          |                   |               | com.sun.tools.javac.processing.JavacProcessingEnvironment |
+|                                  |                  |          |                   |               | NameProcessIterator -->avd.aquasec.com/nvd/cve-2021-21347 |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21350   |          |                   |               | XStream: Unsafe deserizaliation of                        |
+|                                  |                  |          |                   |               | com.sun.org.apache.bcel.internal.util.ClassLoader         |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21350                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21351   |          |                   |               | XStream: allow a remote                                   |
+|                                  |                  |          |                   |               | attacker to load and execute                              |
+|                                  |                  |          |                   |               | arbitrary code from...                                    |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21351                     |
++                                  +------------------+----------+                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2016-3674    | HIGH     |                   | 1.4.9         | XStream: enabled processing                               |
+|                                  |                  |          |                   |               | of external entities                                      |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2016-3674                      |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2017-7957    |          |                   | 1.4.10        | XStream: DoS when                                         |
+|                                  |                  |          |                   |               | unmarshalling void type                                   |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2017-7957                      |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2020-26217   |          |                   | 1.4.14-jdk7   | XStream: remote code                                      |
+|                                  |                  |          |                   |               | execution due to insecure XML                             |
+|                                  |                  |          |                   |               | deserialization when relying on...                        |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2020-26217                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2020-26258   |          |                   | 1.4.15        | XStream: Server-Side Forgery                              |
+|                                  |                  |          |                   |               | Request vulnerability can be                              |
+|                                  |                  |          |                   |               | activated when unmarshalling                              |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2020-26258                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2021-21341   |          |                   | 1.4.16        | XStream: allow a remote attacker to                       |
+|                                  |                  |          |                   |               | cause DoS only by manipulating the...                     |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21341                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21343   |          |                   |               | XStream: arbitrary file                                   |
+|                                  |                  |          |                   |               | deletion on the local host                                |
+|                                  |                  |          |                   |               | via crafted input stream...                               |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21343                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21348   |          |                   |               | XStream: ReDoS vulnerability                              |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21348                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-21349   |          |                   |               | XStream: SSRF can be activated                            |
+|                                  |                  |          |                   |               | unmarshalling with XStream                                |
+|                                  |                  |          |                   |               | to access data streams...                                 |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-21349                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2021-29505   |          |                   | 1.4.17        | XStream: remote command                                   |
+|                                  |                  |          |                   |               | execution attack by manipulating                          |
+|                                  |                  |          |                   |               | the processed input stream                                |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-29505                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2021-39139   |          |                   | 1.4.18        | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | Xalan xsltc.trax.TemplatesImpl                            |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39139                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39141   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | com.sun.xml.internal.ws.client.sei.*                      |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39141                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39144   |          |                   |               | xstream: Arbitrary code                                   |
+|                                  |                  |          |                   |               | execution via unsafe                                      |
+|                                  |                  |          |                   |               | deserialization of sun.tracing.*                          |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39144                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39145   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | com.sun.jndi.ldap.LdapBindingEnumeration                  |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39145                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39146   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | javax.swing.UIDefaults$ProxyLazyValue                     |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39146                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39147   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | com.sun.jndi.ldap.LdapSearchEnumeration                   |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39147                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39148   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | com.sun.jndi.toolkit.dir.ContextEnumerator                |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39148                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39149   |          |                   |               | xstream: Arbitrary code                                   |
+|                                  |                  |          |                   |               | execution via unsafe                                      |
+|                                  |                  |          |                   |               | deserialization of com.sun.corba.*                        |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39149                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39150   |          |                   |               | xstream: Server-side request forgery                      |
+|                                  |                  |          |                   |               | (SSRF) via unsafe deserialization of                      |
+|                                  |                  |          |                   |               | com.sun.xml.internal.ws.client.sei.*                      |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39150                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39151   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | com.sun.jndi.ldap.LdapBindingEnumeration                  |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39151                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39152   |          |                   |               | xstream: Server-side request forgery                      |
+|                                  |                  |          |                   |               | (SSRF) via unsafe deserialization of                      |
+|                                  |                  |          |                   |               | jdk.nashorn.internal.runtime.Source$URLData               |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39152                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39153   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | Xalan xsltc.trax.TemplatesImpl                            |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39153                     |
++                                  +------------------+          +                   +               +-----------------------------------------------------------+
+|                                  | CVE-2021-39154   |          |                   |               | xstream: Arbitrary code execution                         |
+|                                  |                  |          |                   |               | via unsafe deserialization of                             |
+|                                  |                  |          |                   |               | javax.swing.UIDefaults$ProxyLazyValue                     |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-39154                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2021-43859   |          |                   | 1.4.19        | xstream: Injecting highly recursive                       |
+|                                  |                  |          |                   |               | collections or maps can cause a DoS                       |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-43859                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2022-40151   |          |                   | 1.4.20        | xstream: Xstream to serialise                             |
+|                                  |                  |          |                   |               | XML data was vulnerable                                   |
+|                                  |                  |          |                   |               | to Denial of Service...                                   |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-40151                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2022-40152   |          |                   |               | woodstox-core: woodstox to                                |
+|                                  |                  |          |                   |               | serialise XML data was vulnerable                         |
+|                                  |                  |          |                   |               | to Denial of Service...                                   |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-40152                     |
++                                  +------------------+          +                   +---------------+-----------------------------------------------------------+
+|                                  | CVE-2022-41966   |          |                   | 1.4.20        | XStream can cause Denial of                               |
+|                                  |                  |          |                   |               | Service via stack overflow                                |
+|                                  |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-41966                     |
++----------------------------------+------------------+----------+-------------------+---------------+-----------------------------------------------------------+

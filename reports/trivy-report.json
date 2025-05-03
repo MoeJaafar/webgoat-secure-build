@@ -1,0 +1,10 @@
+[
+  {
+    "Target": "webgoat-patched:secure (alpine 3.21.3)",
+    "Type": "alpine"
+  },
+  {
+    "Target": "webgoat/webgoat.jar",
+    "Type": "jar"
+  }
+]

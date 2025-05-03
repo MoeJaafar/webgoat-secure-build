@@ -1,0 +1,53 @@
+name: CI Secure WebGoat Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Docker image
+      run: |
+        docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
+
+    - name: Run Trivy scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'webgoat-patched:secure'
+        format: 'json'
+        output: 'reports/trivy-report.json'
+        severity: 'CRITICAL,HIGH'
+
+    - name: Run Dockle scan
+      run: |
+        docker pull goodwithtech/dockle:latest
+        docker run --rm \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -v ${{ github.workspace }}/reports:/reports \
+          goodwithtech/dockle \
+          -f json \
+          -o /reports/dockle-report.json \
+          --exit-code 1 \
+          webgoat-patched:secure
+
+    - name: Upload reports as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: scan-reports
+        path: reports/
+
+    - name: Fail if reports contain issues (optional)
+      run: |
+        grep -q '"CRITICAL"\|"HIGH"' reports/trivy-report.json && exit 1 || echo "No CRITICAL or HIGH issues in Trivy"
+        grep -q '"level": "WARN"\|"level": "FATAL"' reports/dockle-report.json && exit 1 || echo "No WARN or FATAL in Dockle"
