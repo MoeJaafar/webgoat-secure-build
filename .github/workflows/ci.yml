@@ -55,13 +55,17 @@ jobs:
           -o reports/trivy-report.json
       
 
-    - name: Install Dockle
+    - name: Install Dockle (Debian)
       run: |
-        curl -sSfL https://github.com/goodwithtech/dockle/releases/latest/download/dockle_Linux_x86_64.tar.gz -o dockle.tar.gz
-        tar -xzf dockle.tar.gz
-        chmod +x dockle
-        sudo mv dockle /usr/local/bin/
-             
+          VERSION=$(
+            curl --silent "https://api.github.com/repos/goodwithtech/dockle/releases/latest" | \
+            grep '"tag_name":' | \
+            sed -E 's/.*"v([^"]+)".*/\1/'
+          )
+          curl -L -o dockle.deb "https://github.com/goodwithtech/dockle/releases/download/v${VERSION}/dockle_${VERSION}_Linux-64bit.deb"
+          sudo dpkg -i dockle.deb
+          rm dockle.deb
+        
       
       
 
