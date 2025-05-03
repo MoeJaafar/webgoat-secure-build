@@ -7,8 +7,9 @@ RUN adduser -D -h /home/webgoat webgoat && \
 
 # Copy JAR and entrypoint
 
-COPY webgoat-hardened.jar /webgoat/webgoat.jar
-COPY entrypoint.sh /entrypoint.sh
+COPY hardened/webgoat-hardened.jar /webgoat/webgoat.jar
+COPY hardened/entrypoint.sh /entrypoint.sh
+
 
 
 # Make entrypoint executable

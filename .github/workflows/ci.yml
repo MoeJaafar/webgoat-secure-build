@@ -34,7 +34,7 @@ jobs:
     
       run: |
         export DOCKER_CONTENT_TRUST=1
-        docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched hardened/
+        docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
       working-directory: hardened
       
     - name: Run Trivy scan
