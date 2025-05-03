@@ -1,53 +1,51 @@
-name: CI Secure WebGoat Build
+name: Container Scan and Harden
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Code
       uses: actions/checkout@v3
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    - name: Build Docker image
+    - name: Build Hardened Docker Image
       run: |
         docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
 
-    - name: Run Trivy scan
+    - name: Run Trivy Scan
       uses: aquasecurity/trivy-action@master
       with:
-        image-ref: 'webgoat-patched:secure'
+        image-ref: webgoat-patched:secure
         format: 'json'
         output: 'reports/trivy-report.json'
         severity: 'CRITICAL,HIGH'
+        exit-code: 1
 
-    - name: Run Dockle scan
-      run: |
-        docker pull goodwithtech/dockle:latest
-        docker run --rm \
-          -v /var/run/docker.sock:/var/run/docker.sock \
-          -v ${{ github.workspace }}/reports:/reports \
-          goodwithtech/dockle \
-          -f json \
-          -o /reports/dockle-report.json \
-          --exit-code 1 \
-          webgoat-patched:secure
+    - name: Run Dockle Scan
+      uses: goodwithtech/dockle-action@main
+      with:
+        image: webgoat-patched:secure
+        format: json
+        output: reports/dockle-report.json
+        exit-code: 1
 
-    - name: Upload reports as artifacts
+    - name: Upload Trivy Report
       uses: actions/upload-artifact@v3
       with:
-        name: scan-reports
-        path: reports/
+        name: trivy-report
+        path: reports/trivy-report.json
 
-    - name: Fail if reports contain issues (optional)
-      run: |
-        grep -q '"CRITICAL"\|"HIGH"' reports/trivy-report.json && exit 1 || echo "No CRITICAL or HIGH issues in Trivy"
-        grep -q '"level": "WARN"\|"level": "FATAL"' reports/dockle-report.json && exit 1 || echo "No WARN or FATAL in Dockle"
+    - name: Upload Dockle Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: dockle-report
+        path: reports/dockle-report.json
