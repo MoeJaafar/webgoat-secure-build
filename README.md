@@ -1,6 +1,7 @@
 # Container Hardening and Vulnerability Scanning of WebGoat Using Trivy and Dockle
 
 By Mohammad Jaafar
+
 CBS-01
 
 ## Introduction
