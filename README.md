@@ -13,6 +13,10 @@ This project focuses on hardening a vulnerable containerized application—**OWA
 
 ## Approach and Implementation
 
+### 🛠️ Container Hardening Workflow
+
+![Hardening Workflow](diagrams/hardening-workflow.svg)
+
 ### 2.1 Initial Vulnerability Scanning
 
 I started by scanning the the original image (`webgoat/webgoat`) using Trivy and Dockle.
@@ -36,6 +40,7 @@ I started by scanning the the original image (`webgoat/webgoat`) using Trivy and
 **Figure 2 - Screenshot of Dockle output for webgoat/webgoat**
 
 ---
+
 
 ### 2.2 Dockerfile Hardening
 
@@ -107,6 +112,11 @@ exec java -Dserver.address=0.0.0.0 -Dhibernate.hbm2ddl.auto=none -jar /webgoat/w
 
 ---
 
+### 🔁 CI/CD Pipeline (GitHub Actions)
+
+![CI Pipeline](diagrams/ci-pipeline.svg)
+
+
 ### 2.3 CI/CD Pipeline with GitHub Actions
 
 I automated the container security process using a GitHub Actions CI/CD workflow. This workflow:
@@ -157,6 +167,11 @@ I automated the container security process using a GitHub Actions CI/CD workflow
 | Trivy | HIGH Vulnerabilities | 10+ | 0 |
 | Dockle | Warnings | 1 (`latest` tag) | 0 |
 | Dockle | Informational Issues | 2 (setuid/setgid files) | 0 |
+
+### 🔍 Before vs. After Vulnerability Comparison
+
+![Comparison](diagrams/before-after.svg)
+
 
 ![**Figure 5 - Clean Trivy Report Comparison between original image and hardened image**](./Screenshots/image%203.png)
 

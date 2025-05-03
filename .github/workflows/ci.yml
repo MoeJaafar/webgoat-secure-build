@@ -52,6 +52,7 @@ jobs:
           --format json \
           --severity CRITICAL,HIGH \
           --ignore-unfixed \
+          --exit-code 1 \
           -o reports/trivy-report.json
 
     - name: Run Trivy scan (TXT format)
@@ -82,7 +83,7 @@ jobs:
           mkdir -p reports
           dockle \
             --exit-code 1 \
-            --exit-level warn \
+            --exit-level fatal \
             --accept-key CIS-DI-0010:ARCH \
             --accept-key CIS-DI-0010:JAVA_HOME \
             --accept-key CIS-DI-0010:PATH \
