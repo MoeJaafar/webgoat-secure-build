@@ -17,17 +17,14 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     
-    - name: Create hardened folder
-      run: mkdir -p hardened
-        
-    - name: Download hardened JAR from GitHub Release
+    - name: Download hardened JAR
       run: |
+        mkdir -p hardened
         curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/download/webgoat-hardened.jar/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
-
-    - name: Build Docker image
-      run: |
-        docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
-
+    
+    - name: Build hardened image
+      run: docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
+      
     - name: Run Trivy scan
       uses: aquasecurity/trivy-action@master
       with:
