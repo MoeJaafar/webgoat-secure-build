@@ -1,8 +1,12 @@
 # Container Hardening and Vulnerability Scanning of WebGoat Using Trivy and Dockle
+![CI](https://github.com/MoeJaafar/webgoat-secure-build/actions/workflows/ci.yml/badge.svg)
+
 
 By Mohammad Jaafar
 
 CBS-01
+
+
 
 ## Introduction
 
