@@ -22,6 +22,14 @@ jobs:
         mkdir -p hardened
         curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/download/webgoat-hardened.jar/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
     
+    - name: Create entrypoint.sh
+      run: |
+        mkdir -p hardened
+        echo '#!/bin/sh' > hardened/entrypoint.sh
+        echo 'exec java -Dserver.address=0.0.0.0 -Dhibernate.hbm2ddl.auto=none -jar /webgoat/webgoat.jar' >> hardened/entrypoint.sh
+        chmod +x hardened/entrypoint.sh
+        
+
     - name: Build hardened image
     
       run: |
