@@ -37,12 +37,12 @@ jobs:
         docker build -t webgoat-patched:secure -f Dockerfile.patched .
       
       
-        - name: Install Trivy
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget
-          wget -qO trivy.deb https://github.com/aquasecurity/trivy/releases/download/v0.60.0/trivy_0.60.0_Linux-64bit.deb
-          sudo dpkg -i trivy.deb
+    - name: Install Trivy
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget
+        wget -qO trivy.deb https://github.com/aquasecurity/trivy/releases/download/v0.60.0/trivy_0.60.0_Linux-64bit.deb
+        sudo dpkg -i trivy.deb
       
     - name: Run Trivy scan (skipping large JAR)
       run: |
