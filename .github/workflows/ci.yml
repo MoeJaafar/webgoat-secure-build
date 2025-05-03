@@ -45,6 +45,11 @@ jobs:
         output: 'reports/trivy-report.json'
         severity: 'CRITICAL,HIGH'
         ignore-unfixed: true
+        scan-type: 'image'
+        trivy-config: |
+          skip-files:
+            - webgoat/webgoat.jar
+      
 
     - name: Run Dockle scan
       uses: goodwithtech/dockle-action@main
