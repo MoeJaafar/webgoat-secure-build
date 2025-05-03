@@ -112,7 +112,7 @@ exec java -Dserver.address=0.0.0.0 -Dhibernate.hbm2ddl.auto=none -jar /webgoat/w
 
 ---
 
-### 🔁 CI/CD Pipeline (GitHub Actions)
+### CI/CD Pipeline (GitHub Actions)
 
 ![CI Pipeline](diagrams/ci-pipeline.svg)
 
@@ -168,7 +168,7 @@ I automated the container security process using a GitHub Actions CI/CD workflow
 | Dockle | Warnings | 1 (`latest` tag) | 0 |
 | Dockle | Informational Issues | 2 (setuid/setgid files) | 0 |
 
-### 🔍 Before vs. After Vulnerability Comparison
+###  Before vs. After Vulnerability Comparison
 
 ![Comparison](diagrams/before-after.svg)
 
@@ -188,8 +188,6 @@ I automated the container security process using a GitHub Actions CI/CD workflow
 > I found that binding the server to 0.0.0.0 was necessary for the container to expose the app correctly. Additionally, disabling Hibernate’s schema auto-generation (hibernate.hbm2ddl.auto) resolved write-access errors in the container’s read-only filesystem.
 > 
 
-> While Alpine 3.19 was incorrectly flagged as EOL by some scanners, I verified its support lifecycle via official sources and confirmed its validity through November 2025.
-> 
 
 > While the pipeline automates security scanning, the Trivy scan slowed significantly due to the large `.jar` size. Optimizing artifact size or excluding static files in scans could improve performance.
 > 
