@@ -37,18 +37,24 @@ jobs:
         docker build -t webgoat-patched:secure -f Dockerfile.patched .
       
       
-    - name: Run Trivy scan
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: webgoat-patched:secure
-        format: 'json'
-        output: 'reports/trivy-report.json'
-        severity: 'CRITICAL,HIGH'
-        ignore-unfixed: true
-        scan-type: 'image'
-        trivy-config: |
-          skip-files:
-            - webgoat/webgoat.jar
+        - name: Install Trivy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget -qO trivy.deb https://github.com/aquasecurity/trivy/releases/download/v0.60.0/trivy_0.60.0_Linux-64bit.deb
+          sudo dpkg -i trivy.deb
+      
+    - name: Run Trivy scan (skipping large JAR)
+      run: |
+        mkdir -p reports
+        trivy image webgoat-patched:secure \
+          --skip-files webgoat/webgoat.jar \
+          --format json \
+          --severity CRITICAL,HIGH \
+          --ignore-unfixed \
+          -o reports/trivy-report.json
+      
+      
       
 
     - name: Run Dockle scan
