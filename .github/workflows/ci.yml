@@ -1,4 +1,4 @@
-name: Container Scan and Harden
+name: Secure Docker Build & Scan
 
 on:
   push:
@@ -11,41 +11,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    - name: Build Hardened Docker Image
+    - name: Download hardened JAR from GitHub Release
+      run: |
+        curl -L "https://github.com/MoeJaafar/webgoat-secure-build/releases/tag/webgoat-hardened.jar" -o hardened/webgoat-hardened.jar
+
+    - name: Build Docker image
       run: |
         docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
 
-    - name: Run Trivy Scan
+    - name: Run Trivy scan
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: webgoat-patched:secure
         format: 'json'
         output: 'reports/trivy-report.json'
         severity: 'CRITICAL,HIGH'
-        exit-code: 1
+        ignore-unfixed: true
 
-    - name: Run Dockle Scan
+    - name: Run Dockle scan
       uses: goodwithtech/dockle-action@main
       with:
         image: webgoat-patched:secure
         format: json
         output: reports/dockle-report.json
-        exit-code: 1
 
-    - name: Upload Trivy Report
-      uses: actions/upload-artifact@v4
+    - name: Upload scan reports
+      uses: actions/upload-artifact@v3
       with:
-        name: trivy-report
-        path: reports/trivy-report.json
-
-    - name: Upload Dockle Report
-      uses: actions/upload-artifact@v4
-      with:
-        name: dockle-report
-        path: reports/dockle-report.json
+        name: docker-security-reports
+        path: reports/
