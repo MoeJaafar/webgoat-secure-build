@@ -53,7 +53,15 @@ jobs:
           --severity CRITICAL,HIGH \
           --ignore-unfixed \
           -o reports/trivy-report.json
-      
+
+    - name: Run Trivy scan (TXT format)
+      run: |
+          trivy image --severity CRITICAL,HIGH \
+            --skip-files /webgoat/webgoat.jar \
+            --format table --output reports/trivy-report.txt \
+            webgoat-patched:secure
+        
+          
 
     - name: Install Dockle (Debian)
       run: |
