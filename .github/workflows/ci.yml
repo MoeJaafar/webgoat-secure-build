@@ -30,12 +30,12 @@ jobs:
         chmod +x hardened/entrypoint.sh
         
 
-    - name: Build hardened image
-    
+    - name: Build Hardened Docker Image
+      working-directory: hardened
       run: |
         export DOCKER_CONTENT_TRUST=1
-        docker build -t webgoat-patched:secure -f hardened/Dockerfile.patched .
-      working-directory: hardened
+        docker build -t webgoat-patched:secure -f Dockerfile.patched .
+      
       
     - name: Run Trivy scan
       uses: aquasecurity/trivy-action@master
