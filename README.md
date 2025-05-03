@@ -7,7 +7,7 @@ CBS-01
 
 In modern DevOps practices, container security is critical to ensuring the integrity and safety of applications deployed at scale. While containers encapsulate dependencies and runtime environments, they can also package vulnerabilities and misconfigurations.
 
-This project focuses on hardening a vulnerable containerized application—**OWASP WebGoat**—by using **Trivy** and **Dockle** to identify issues, and then systematically fixing them. We also implemented a CI/CD pipeline using GitHub Actions to automate scanning and enforce secure build standards.
+This project focuses on hardening a vulnerable containerized application—**OWASP WebGoat**—by using **Trivy** and **Dockle** to identify issues, and then systematically fixing them. I also implemented a CI/CD pipeline using GitHub Actions to automate scanning and enforce secure build standards.
 
 ---
 
@@ -15,7 +15,7 @@ This project focuses on hardening a vulnerable containerized application—**OWA
 
 ### 2.1 Initial Vulnerability Scanning
 
-We started by scanning the the original image (`webgoat/webgoat`) using Trivy and Dockle.
+I started by scanning the the original image (`webgoat/webgoat`) using Trivy and Dockle.
 
 - Trivy detected multiple high and critical vulnerabilities, primarily in the `xstream` library, which is intentionally vulnerable in WebGoat to demonstrate insecure deserialization.
 - **Dockle** flagged issues like the use of the `latest` tag and presence of setuid/setgid binaries.
@@ -39,7 +39,7 @@ We started by scanning the the original image (`webgoat/webgoat`) using Trivy an
 
 ### 2.2 Dockerfile Hardening
 
-To mitigate risks and improve security, we created two hardened Dockerfiles:
+To mitigate risks and improve security, I created two hardened Dockerfiles:
 
 1. A Dockerfile that starts **from the official WebGoat image**, removing setuid/setgid binaries and adding a `HEALTHCHECK` instruction.
 2. A fully hardened Dockerfile **from scratch using `eclipse-temurin:24-jdk-alpine`**, which:
@@ -109,7 +109,7 @@ exec java -Dserver.address=0.0.0.0 -Dhibernate.hbm2ddl.auto=none -jar /webgoat/w
 
 ### 2.3 CI/CD Pipeline with GitHub Actions
 
-We automated the container security process using a GitHub Actions CI/CD workflow. This workflow:
+I automated the container security process using a GitHub Actions CI/CD workflow. This workflow:
 
 - Triggers on push
 - Builds the hardened Docker image
@@ -170,10 +170,10 @@ We automated the container security process using a GitHub Actions CI/CD workflo
 
 ## Discussion
 
-> We found that binding the server to 0.0.0.0 was necessary for the container to expose the app correctly. Additionally, disabling Hibernate’s schema auto-generation (hibernate.hbm2ddl.auto) resolved write-access errors in the container’s read-only filesystem.
+> I found that binding the server to 0.0.0.0 was necessary for the container to expose the app correctly. Additionally, disabling Hibernate’s schema auto-generation (hibernate.hbm2ddl.auto) resolved write-access errors in the container’s read-only filesystem.
 > 
 
-> While Alpine 3.19 was incorrectly flagged as EOL by some scanners, we verified its support lifecycle via official sources and confirmed its validity through November 2025.
+> While Alpine 3.19 was incorrectly flagged as EOL by some scanners, I verified its support lifecycle via official sources and confirmed its validity through November 2025.
 > 
 
 > While the pipeline automates security scanning, the Trivy scan slowed significantly due to the large `.jar` size. Optimizing artifact size or excluding static files in scans could improve performance.
@@ -185,7 +185,7 @@ This exercise reinforced best practices in secure development and showed how aut
 
 ## Conclusion
 
-Starting from a vulnerable image, we successfully built a secure and hardened container. Through the use of automated scanning and CI/CD enforcement, we demonstrated a repeatable DevSecOps workflow. This project highlights the importance of integrating security early in the pipeline and shows how container security can be embedded directly into development practices.
+Starting from a vulnerable image, I successfully built a secure and hardened container. Through the use of automated scanning and CI/CD enforcement, I demonstrated a repeatable DevSecOps workflow. This project highlights the importance of integrating security early in the pipeline and shows how container security can be embedded directly into development practices.
 
 ---
 
