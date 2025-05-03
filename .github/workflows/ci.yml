@@ -54,15 +54,34 @@ jobs:
           --ignore-unfixed \
           -o reports/trivy-report.json
       
+
+    - name: Install Dockle
+      run: |
+        curl -sSfL https://github.com/goodwithtech/dockle/releases/latest/download/dockle_Linux_x86_64.tar.gz -o dockle.tar.gz
+        tar -xzf dockle.tar.gz
+        chmod +x dockle
+        sudo mv dockle /usr/local/bin/
+             
       
       
 
-    - name: Run Dockle scan
-      uses: goodwithtech/dockle-action@main
-      with:
-        image: webgoat-patched:secure
-        format: json
-        output: reports/dockle-report.json
+    - name: Run Dockle scan with accepted keys
+      run: |
+          mkdir -p reports
+          dockle \
+            --exit-code 1 \
+            --exit-level warn \
+            --accept-key CIS-DI-0010:ARCH \
+            --accept-key CIS-DI-0010:JAVA_HOME \
+            --accept-key CIS-DI-0010:PATH \
+            --accept-key CIS-DI-0010:JAVA_VERSION \
+            --accept-key CIS-DI-0010:LANG \
+            --accept-key CIS-DI-0010:fileEncoding \
+            --accept-key CIS-DI-0010:--chmod \
+            --format json \
+            --output reports/dockle-report.json \
+            webgoat-patched:secure
+      
 
     - name: Upload scan reports
       uses: actions/upload-artifact@v4
